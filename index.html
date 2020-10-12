@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+
+            navigator.serviceWorker.ready.then(function () {
+                return fetch('https://jsonplaceholder.typicode.com/todos/1').then(function (response) {
+                    return response.json();
+                });
+            });
+        } else {
+            console.error('This browser does not support service workers.');
+        }
+    </script>
+</body>
+</html>
