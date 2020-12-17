@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id='test'></div>
+    <script>
+        const testDiv = document.getElementById('test');
+
+        const img = new Image();
+        
+        img.crossOrigin = true;
+        img.src = 'https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png';
+        img.onload = () => console.log('onload');
+        img.onerror = e => console.log('onerror', e);
+
+        testDiv.appendChild(img);
+    </script>
+</body>
+</html>
